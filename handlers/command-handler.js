@@ -23,7 +23,7 @@ async function handle(msg, savedGuild) {
     const commandName = msg.content
       .split(' ')[0]
       .slice(prefix.length);
-  
+
     const command = commands.get(commandName);
     await command?.execute(msg, ...args);
   } catch (err) {
@@ -32,3 +32,4 @@ async function handle(msg, savedGuild) {
 }
 
 module.exports.handle = handle;
+module.exports.commands = commands;
